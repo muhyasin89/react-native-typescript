@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "concurrently \"tailwindcss -i src/styled/index.css --postcss postcss.config.js --watch\" \"expo start\"",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start -c --web"
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
     "expo": "~49.0.15",
     "expo-status-bar": "~1.6.0",
+    "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.72.6",
@@ -24,6 +25,7 @@
     "@types/react": "^18.2.43",
     "@types/react-test-renderer": "^18.0.7",
     "babel-plugin-module-resolver": "^5.0.0",
+    "tailwindcss": "^3.3.6",
     "typescript": "^5.3.3"
   },
   "private": true
